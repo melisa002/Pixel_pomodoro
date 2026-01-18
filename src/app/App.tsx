@@ -5,10 +5,19 @@ import { MusicPlayer } from '@/app/components/MusicPlayer';
 import { MoodTracker } from '@/app/components/MoodTracker';
 import { PomodoroTimer } from '@/app/components/PomodoroTimer';
 import { CharacterDisplay } from '@/app/components/CharacterDisplay';
+import { MusicProvider } from '@/app/contexts/MusicContext';
 
 type Tab = 'music' | 'mood' | 'timer' | 'character';
 
 export default function App() {
+  return (
+    <MusicProvider>
+      <AppContent />
+    </MusicProvider>
+  );
+}
+
+function AppContent() {
   const [activeTab, setActiveTab] = useState<Tab>('character');
   const [totalLifetimePomodoros, setTotalLifetimePomodoros] = useState(0);
 
@@ -37,25 +46,25 @@ export default function App() {
   ];
 
   return (
-    <div className="size-full min-h-screen bg-slate-900 flex items-center justify-center p-4">
+    <div className="size-full min-h-screen flex items-center justify-center p-2" style={{ background: 'transparent' }}>
       {/* Widget Container - SQUARE! */}
       <motion.div
         initial={{ scale: 0.9, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
-        className="relative w-full max-w-[600px] aspect-square"
+        className="relative w-full h-full"
       >
         {/* Main Card with enhanced pixel aesthetic */}
-        <div className="relative h-full bg-white rounded-3xl shadow-[0_0_60px_rgba(219,39,119,0.5),16px_16px_0px_0px_rgba(219,39,119,0.25)] border-8 border-pink-300 overflow-hidden flex flex-col">
+        <div className="relative h-full bg-white rounded-3xl shadow-[0_0_60px_rgba(153,27,27,0.5),16px_16px_0px_0px_rgba(219,39,119,0.25)] border-8 border-rose-900 overflow-hidden flex flex-col">
           {/* Scanline effect overlay */}
           <div className="absolute inset-0 pointer-events-none z-50 opacity-[0.04]">
             <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,0,0,0.5)_2px,rgba(0,0,0,0.5)_4px)]" />
           </div>
-          
+
           {/* Header with pixel pattern */}
-          <div className="relative p-4 bg-gradient-to-r from-pink-200 via-rose-200 to-purple-200 border-b-8 border-pink-300 shrink-0">
+          <div className="relative p-4 bg-gradient-to-r from-rose-900 via-red-900 to-pink-950 border-b-8 border-rose-950 shrink-0">
             {/* Pixel pattern overlay */}
             <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_24%,rgba(255,255,255,.15)_25%,rgba(255,255,255,.15)_26%,transparent_27%,transparent_74%,rgba(255,255,255,.15)_75%,rgba(255,255,255,.15)_76%,transparent_77%,transparent),linear-gradient(90deg,transparent_24%,rgba(255,255,255,.15)_25%,rgba(255,255,255,.15)_26%,transparent_27%,transparent_74%,rgba(255,255,255,.15)_75%,rgba(255,255,255,.15)_76%,transparent_77%,transparent)] bg-[length:4px_4px]" />
-            
+
             <div className="relative flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <motion.div
@@ -68,30 +77,30 @@ export default function App() {
                     repeat: Infinity,
                     ease: 'easeInOut',
                   }}
-                  className="bg-white/40 p-2 rounded-lg border-4 border-white/60"
+                  className="bg-pink-950/40 p-2 rounded-lg border-4 border-rose-800/60"
                 >
-                  <PixelStar className="w-5 h-5 text-rose-500" />
+                  <PixelStar className="w-5 h-5 text-pink-200" />
                 </motion.div>
                 <div>
-                  <h1 className="text-base font-bold text-rose-600 font-['Press_Start_2P'] leading-tight">
-                    Focus Pet
+                  <h1 className="text-base font-bold text-pink-100 font-['Press_Start_2P'] leading-tight">
+                    Focus Time :p
                   </h1>
-                  <p className="text-xs text-pink-600 mt-0.5 font-bold">tamagotchi vibes ♡</p>
+                  <p className="text-xs text-rose-200 mt-0.5 font-bold">mblidhi pllumat zemra dhe puno♡</p>
                 </div>
               </div>
               {/* Decorative pixel hearts */}
               <div className="flex gap-1">
+                <PixelHeart className="w-4 h-4 text-pink-300 opacity-60" />
                 <PixelHeart className="w-4 h-4 text-rose-400 opacity-60" />
-                <PixelHeart className="w-4 h-4 text-pink-400 opacity-60" />
               </div>
             </div>
           </div>
 
           {/* Tab Navigation - 4 tabs in grid */}
-          <div className="relative grid grid-cols-4 gap-1 p-2 bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50 border-b-4 border-pink-200 shrink-0">
+          <div className="relative grid grid-cols-4 gap-1 p-2 bg-gradient-to-br from-rose-950 via-red-900 to-pink-950 border-b-4 border-rose-950 shrink-0">
             {/* Pixel pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_24%,rgba(255,192,203,.05)_25%,rgba(255,192,203,.05)_26%,transparent_27%,transparent_74%,rgba(255,192,203,.05)_75%,rgba(255,192,203,.05)_76%,transparent_77%,transparent),linear-gradient(90deg,transparent_24%,rgba(255,192,203,.05)_25%,rgba(255,192,203,.05)_26%,transparent_27%,transparent_74%,rgba(255,192,203,.05)_75%,rgba(255,192,203,.05)_76%,transparent_77%,transparent)] bg-[length:4px_4px]" />
-            
+            <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_24%,rgba(219,39,119,.05)_25%,rgba(219,39,119,.05)_26%,transparent_27%,transparent_74%,rgba(219,39,119,.05)_75%,rgba(219,39,119,.05)_76%,transparent_77%,transparent),linear-gradient(90deg,transparent_24%,rgba(219,39,119,.05)_25%,rgba(219,39,119,.05)_26%,transparent_27%,transparent_74%,rgba(219,39,119,.05)_75%,rgba(219,39,119,.05)_76%,transparent_77%,transparent)] bg-[length:4px_4px]" />
+
             {tabs.map((tab) => {
               const Icon = tab.icon;
               return (
@@ -102,8 +111,8 @@ export default function App() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`relative flex flex-col items-center justify-center gap-1 py-2 px-2 rounded-lg transition-all border-3 font-bold text-xs ${
                     activeTab === tab.id
-                      ? 'bg-gradient-to-br from-rose-400 to-pink-500 text-white border-rose-500 shadow-[3px_3px_0px_0px_rgba(220,38,38,0.4)]'
-                      : 'bg-gradient-to-br from-pink-100 to-pink-50 text-pink-600 border-pink-300 hover:border-pink-400 shadow-[2px_2px_0px_0px_rgba(219,39,119,0.15)]'
+                      ? 'bg-gradient-to-br from-rose-600 to-red-800 text-pink-100 border-rose-800 shadow-[3px_3px_0px_0px_rgba(159,18,57,0.6)]'
+                      : 'bg-gradient-to-br from-rose-950/50 to-pink-950/50 text-pink-200 border-rose-900/50 hover:border-rose-800 shadow-[2px_2px_0px_0px_rgba(159,18,57,0.3)]'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -125,10 +134,10 @@ export default function App() {
           </div>
 
           {/* Content - SCROLLABLE */}
-          <div className="relative flex-1 overflow-y-auto bg-gradient-to-br from-pink-50 via-white to-purple-50">
+          <div className="relative flex-1 overflow-y-auto bg-gradient-to-br from-pink-100 via-rose-50 to-red-100">
             {/* Subtle pixel grid */}
-            <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_24%,rgba(255,192,203,.02)_25%,rgba(255,192,203,.02)_26%,transparent_27%,transparent_74%,rgba(255,192,203,.02)_75%,rgba(255,192,203,.02)_76%,transparent_77%,transparent),linear-gradient(90deg,transparent_24%,rgba(255,192,203,.02)_25%,rgba(255,192,203,.02)_26%,transparent_27%,transparent_74%,rgba(255,192,203,.02)_75%,rgba(255,192,203,.02)_76%,transparent_77%,transparent)] bg-[length:8px_8px] pointer-events-none" />
-            
+            <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_24%,rgba(219,39,119,.03)_25%,rgba(219,39,119,.03)_26%,transparent_27%,transparent_74%,rgba(219,39,119,.03)_75%,rgba(219,39,119,.03)_76%,transparent_77%,transparent),linear-gradient(90deg,transparent_24%,rgba(219,39,119,.03)_25%,rgba(219,39,119,.03)_26%,transparent_27%,transparent_74%,rgba(219,39,119,.03)_75%,rgba(219,39,119,.03)_76%,transparent_77%,transparent)] bg-[length:8px_8px] pointer-events-none" />
+
             <div className="p-4 relative z-10">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -139,15 +148,15 @@ export default function App() {
                   transition={{ duration: 0.3 }}
                 >
                   {activeTab === 'character' && (
-                    <CharacterDisplay 
+                    <CharacterDisplay
                       totalPomodoros={totalLifetimePomodoros}
                     />
                   )}
                   {activeTab === 'music' && <MusicPlayer onSave={handleSave} />}
                   {activeTab === 'mood' && <MoodTracker onSave={handleSave} />}
                   {activeTab === 'timer' && (
-                    <PomodoroTimer 
-                      onSave={handleSave} 
+                    <PomodoroTimer
+                      onSave={handleSave}
                       onPomodoroComplete={handlePomodoroComplete}
                     />
                   )}
@@ -157,18 +166,18 @@ export default function App() {
           </div>
 
           {/* Footer with enhanced design */}
-          <div className="relative p-3 bg-gradient-to-r from-pink-200 via-rose-200 to-purple-200 border-t-4 border-pink-300 shrink-0">
+          <div className="relative p-3 bg-gradient-to-r from-rose-900 via-red-900 to-pink-950 border-t-4 border-rose-950 shrink-0">
             {/* Pixel pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_24%,rgba(255,255,255,.1)_25%,rgba(255,255,255,.1)_26%,transparent_27%,transparent_74%,rgba(255,255,255,.1)_75%,rgba(255,255,255,.1)_76%,transparent_77%,transparent),linear-gradient(90deg,transparent_24%,rgba(255,255,255,.1)_25%,rgba(255,255,255,.1)_26%,transparent_27%,transparent_74%,rgba(255,255,255,.1)_75%,rgba(255,255,255,.1)_76%,transparent_77%,transparent)] bg-[length:4px_4px]" />
-            
+            <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_24%,rgba(0,0,0,.1)_25%,rgba(0,0,0,.1)_26%,transparent_27%,transparent_74%,rgba(0,0,0,.1)_75%,rgba(0,0,0,.1)_76%,transparent_77%,transparent),linear-gradient(90deg,transparent_24%,rgba(0,0,0,.1)_25%,rgba(0,0,0,.1)_26%,transparent_27%,transparent_74%,rgba(0,0,0,.1)_75%,rgba(0,0,0,.1)_76%,transparent_77%,transparent)] bg-[length:4px_4px]" />
+
             <div className="relative flex items-center justify-between text-xs font-bold">
               <div className="flex items-center gap-2">
                 <div className="flex gap-0.5">
-                  <div className="w-2 h-2 bg-rose-400 rounded-sm border border-rose-500" />
-                  <div className="w-2 h-2 bg-pink-400 rounded-sm border border-pink-500" />
-                  <div className="w-2 h-2 bg-purple-400 rounded-sm border border-purple-500" />
+                  <div className="w-2 h-2 bg-pink-500 rounded-sm border border-pink-600" />
+                  <div className="w-2 h-2 bg-rose-600 rounded-sm border border-rose-700" />
+                  <div className="w-2 h-2 bg-red-700 rounded-sm border border-red-800" />
                 </div>
-                <span className="text-pink-700">feed ur pet ♡</span>
+                <span className="text-pink-100">mos harro te ushqesh kte te mjerin ♡</span>
               </div>
               <div className="flex items-center gap-2">
                 <motion.div
@@ -180,16 +189,16 @@ export default function App() {
                     duration: 1.5,
                     repeat: Infinity,
                   }}
-                  className="w-2.5 h-2.5 bg-gradient-to-br from-rose-400 to-pink-500 rounded-sm border-2 border-rose-500 shadow-[0_0_8px_rgba(220,38,38,0.6)]"
+                  className="w-2.5 h-2.5 bg-gradient-to-br from-pink-500 to-rose-700 rounded-sm border-2 border-rose-600 shadow-[0_0_8px_rgba(219,39,119,0.8)]"
                 />
-                <span className="text-rose-700">{totalLifetimePomodoros}</span>
+                <span className="text-pink-100">{totalLifetimePomodoros}</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Enhanced glow effect */}
-        <div className="absolute -inset-6 bg-gradient-to-r from-pink-400 via-rose-400 to-purple-400 rounded-[3rem] blur-3xl opacity-25 -z-10 animate-pulse" />
+        <div className="absolute -inset-6 bg-gradient-to-r from-rose-900 via-pink-800 to-red-900 rounded-[3rem] blur-3xl opacity-30 -z-10 animate-pulse" />
       </motion.div>
     </div>
   );

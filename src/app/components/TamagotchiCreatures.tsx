@@ -46,7 +46,7 @@ export function TamagotchiBunny({ className = '', stage = 0, isHappy = false, is
         <rect x="28" y="50" width="24" height="4" fill="#FFD1DC" />
         <rect x="30" y="54" width="20" height="4" fill="#FFC0CB" />
         <rect x="34" y="58" width="12" height="4" fill="#FFB3C1" />
-        
+
         {/* Spots */}
         <rect x="36" y="42" width="4" height="4" fill="#FF69B4" />
         <rect x="44" y="44" width="4" height="4" fill="#FF69B4" />
@@ -55,7 +55,7 @@ export function TamagotchiBunny({ className = '', stage = 0, isHappy = false, is
   }
 
   const bodySize = stage === 1 ? 1 : stage === 2 ? 1.1 : stage === 3 ? 1.2 : 1.3;
-  
+
   return (
     <svg className={className} viewBox="0 0 80 80" fill="none">
       <g transform={`scale(${bodySize}) translate(${40 * (1 - bodySize)}, ${40 * (1 - bodySize)})`}>
@@ -65,7 +65,7 @@ export function TamagotchiBunny({ className = '', stage = 0, isHappy = false, is
           <rect x="20" y="18" width="4" height="4" fill="#FFD1DC" />
           <rect x="20" y="22" width="4" height="8" fill="#FFC0CB" />
           <rect x="22" y="24" width="2" height="4" fill="#FFE4E8" />
-          
+
           {/* Right ear */}
           <rect x="56" y="18" width="4" height="4" fill="#FFD1DC" />
           <rect x="56" y="22" width="4" height="8" fill="#FFC0CB" />
@@ -76,7 +76,7 @@ export function TamagotchiBunny({ className = '', stage = 0, isHappy = false, is
         <rect x="28" y="24" width="24" height="4" fill="#FFD1DC" />
         <rect x="24" y="28" width="32" height="20" fill="#FFE4E8" />
         <rect x="28" y="48" width="24" height="4" fill="#FFD1DC" />
-        
+
         {/* CHEEKS */}
         <rect x="24" y="38" width="6" height="6" fill="#FFB3C1" opacity="0.7" />
         <rect x="50" y="38" width="6" height="6" fill="#FFB3C1" opacity="0.7" />
@@ -92,7 +92,7 @@ export function TamagotchiBunny({ className = '', stage = 0, isHappy = false, is
             {/* Left eye */}
             <rect x="32" y="32" width="4" height="6" fill="#2C2C2C" />
             <rect x="33" y="33" width="2" height="2" fill="#FFFFFF" />
-            
+
             {/* Right eye */}
             <rect x="44" y="32" width="4" height="6" fill="#2C2C2C" />
             <rect x="45" y="33" width="2" height="2" fill="#FFFFFF" />
@@ -119,7 +119,7 @@ export function TamagotchiBunny({ className = '', stage = 0, isHappy = false, is
             <rect x="30" y="52" width="20" height="4" fill="#FFD1DC" />
             <rect x="26" y="56" width="28" height="12" fill="#FFE4E8" />
             <rect x="30" y="68" width="20" height="4" fill="#FFD1DC" />
-            
+
             {/* ARMS - animated walking */}
             {frame === 0 ? (
               <>
@@ -213,7 +213,7 @@ export function TamagotchiCat({ className = '', stage = 0, isHappy = false, isBo
         <rect x="28" y="50" width="24" height="4" fill="#E1BEE7" />
         <rect x="30" y="54" width="20" height="4" fill="#CE93D8" />
         <rect x="34" y="58" width="12" height="4" fill="#BA68C8" />
-        
+
         <rect x="36" y="42" width="4" height="4" fill="#9C27B0" />
         <rect x="44" y="44" width="4" height="4" fill="#9C27B0" />
       </svg>
@@ -221,7 +221,7 @@ export function TamagotchiCat({ className = '', stage = 0, isHappy = false, isBo
   }
 
   const bodySize = stage === 1 ? 1 : stage === 2 ? 1.1 : stage === 3 ? 1.2 : 1.3;
-  
+
   return (
     <svg className={className} viewBox="0 0 80 80" fill="none">
       <g transform={`scale(${bodySize}) translate(${40 * (1 - bodySize)}, ${40 * (1 - bodySize)})`}>
@@ -232,7 +232,7 @@ export function TamagotchiCat({ className = '', stage = 0, isHappy = false, isBo
           <rect x="26" y="16" width="4" height="4" fill="#CE93D8" />
           <rect x="28" y="12" width="4" height="4" fill="#BA68C8" />
           <rect x="27" y="18" width="2" height="4" fill="#F3E5F5" />
-          
+
           {/* Right ear */}
           <rect x="52" y="20" width="4" height="4" fill="#E1BEE7" />
           <rect x="50" y="16" width="4" height="4" fill="#CE93D8" />
@@ -244,7 +244,7 @@ export function TamagotchiCat({ className = '', stage = 0, isHappy = false, isBo
         <rect x="28" y="24" width="24" height="4" fill="#E1BEE7" />
         <rect x="24" y="28" width="32" height="20" fill="#F3E5F5" />
         <rect x="28" y="48" width="24" height="4" fill="#E1BEE7" />
-        
+
         {/* CHEEKS */}
         <rect x="22" y="38" width="8" height="6" fill="#CE93D8" opacity="0.6" />
         <rect x="50" y="38" width="8" height="6" fill="#CE93D8" opacity="0.6" />
@@ -261,7 +261,7 @@ export function TamagotchiCat({ className = '', stage = 0, isHappy = false, isBo
             <rect x="32" y="32" width="4" height="6" fill="#2C2C2C" />
             <rect x="33" y="34" width="2" height="4" fill="#9C27B0" />
             <rect x="34" y="33" width="1" height="2" fill="#FFFFFF" />
-            
+
             {/* Right eye */}
             <rect x="44" y="32" width="4" height="6" fill="#2C2C2C" />
             <rect x="45" y="34" width="2" height="4" fill="#9C27B0" />
@@ -300,7 +300,7 @@ export function TamagotchiCat({ className = '', stage = 0, isHappy = false, isBo
             <rect x="30" y="52" width="20" height="4" fill="#E1BEE7" />
             <rect x="26" y="56" width="28" height="12" fill="#F3E5F5" />
             <rect x="30" y="68" width="20" height="4" fill="#E1BEE7" />
-            
+
             {/* FEET - walking animation */}
             {frame === 0 ? (
               <>
@@ -375,7 +375,7 @@ export function TamagotchiBear({ className = '', stage = 0, isHappy = false, isB
         <rect x="28" y="50" width="24" height="4" fill="#FFE0B2" />
         <rect x="30" y="54" width="20" height="4" fill="#FFCC80" />
         <rect x="34" y="58" width="12" height="4" fill="#FFB74D" />
-        
+
         <rect x="36" y="42" width="4" height="4" fill="#FF9800" />
         <rect x="44" y="44" width="4" height="4" fill="#FF9800" />
       </svg>
@@ -383,7 +383,7 @@ export function TamagotchiBear({ className = '', stage = 0, isHappy = false, isB
   }
 
   const bodySize = stage === 1 ? 1 : stage === 2 ? 1.1 : stage === 3 ? 1.2 : 1.3;
-  
+
   return (
     <svg className={className} viewBox="0 0 80 80" fill="none">
       <g transform={`scale(${bodySize}) translate(${40 * (1 - bodySize)}, ${40 * (1 - bodySize)})`}>
@@ -393,7 +393,7 @@ export function TamagotchiBear({ className = '', stage = 0, isHappy = false, isB
           <rect x="22" y="18" width="8" height="4" fill="#FFCC80" />
           <rect x="20" y="22" width="12" height="8" fill="#FFE0B2" />
           <rect x="24" y="24" width="4" height="4" fill="#FFF3E0" />
-          
+
           {/* Right ear */}
           <rect x="50" y="18" width="8" height="4" fill="#FFCC80" />
           <rect x="48" y="22" width="12" height="8" fill="#FFE0B2" />
@@ -404,7 +404,7 @@ export function TamagotchiBear({ className = '', stage = 0, isHappy = false, isB
         <rect x="28" y="24" width="24" height="4" fill="#FFCC80" />
         <rect x="24" y="28" width="32" height="20" fill="#FFE0B2" />
         <rect x="28" y="48" width="24" height="4" fill="#FFCC80" />
-        
+
         {/* SNOUT/MUZZLE */}
         <rect x="32" y="38" width="16" height="10" fill="#FFF3E0" />
 
@@ -419,7 +419,7 @@ export function TamagotchiBear({ className = '', stage = 0, isHappy = false, isB
             {/* Left eye */}
             <rect x="30" y="30" width="6" height="6" fill="#5D4037" />
             <rect x="32" y="31" width="2" height="2" fill="#FFFFFF" />
-            
+
             {/* Right eye */}
             <rect x="44" y="30" width="6" height="6" fill="#5D4037" />
             <rect x="46" y="31" width="2" height="2" fill="#FFFFFF" />
@@ -447,10 +447,10 @@ export function TamagotchiBear({ className = '', stage = 0, isHappy = false, isB
             <rect x="30" y="52" width="20" height="4" fill="#FFCC80" />
             <rect x="26" y="56" width="28" height="14" fill="#FFE0B2" />
             <rect x="30" y="70" width="20" height="4" fill="#FFCC80" />
-            
+
             {/* BELLY */}
             <rect x="34" y="58" width="12" height="10" fill="#FFF3E0" />
-            
+
             {/* ARMS - animated */}
             {frame === 0 ? (
               <>
@@ -494,21 +494,21 @@ export function TamagotchiBear({ className = '', stage = 0, isHappy = false, isB
 export const creatures = [
   {
     id: 'bunny',
-    name: 'Cherry Bunny',
+    name: 'Lepri Bos',
     component: TamagotchiBunny,
     color: 'from-pink-100 via-pink-50 to-rose-50',
     emoji: '🐰',
   },
   {
     id: 'cat',
-    name: 'Lavender Cat',
+    name: 'Moca Mretnesh',
     component: TamagotchiCat,
     color: 'from-purple-100 via-purple-50 to-pink-50',
     emoji: '🐱',
   },
   {
     id: 'bear',
-    name: 'Honey Bear',
+    name: 'Ariu Mret',
     component: TamagotchiBear,
     color: 'from-amber-100 via-orange-50 to-yellow-50',
     emoji: '🐻',
